@@ -1,0 +1,44 @@
+.project-pagination-container {
+    width: 180px;
+    margin: 0 auto;
+}
+
+.project-pagination-box {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 15px;
+
+}
+
+.project-pagination-numberpage {
+    margin: auto;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--color-primary);
+}
+
+.project-pagination-bttarrow {
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid var(--color-primary);
+    background-color: #FFF;
+}
+
+.project-pagination-bttarrow#right {
+    transform: rotate(180deg);
+}
+
+.project-pagination-bttarrow svg {
+    filter: brightness(0) saturate(100%) invert(26%) sepia(19%) saturate(7395%) hue-rotate(234deg) brightness(89%) contrast(92%);
+}
+
+.project-pagination-bttarrow:disabled {
+    border: 1px solid #C2C2C2;
+}
+
+.project-pagination-bttarrow:disabled svg {
+    filter: none;
+}
