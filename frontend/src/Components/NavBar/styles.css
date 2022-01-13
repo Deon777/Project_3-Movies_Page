@@ -1,0 +1,29 @@
+header {
+    background-color: var(--color-primary);
+    display: flex;
+}
+
+header h1 {
+    margin: 0px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #FFF;
+    height: 60px;
+}
+
+.project-gitlink {
+    display: flex;
+    align-items: center;
+}
+
+.project-gitlink-text {
+    margin: 0px 0px 0px 10px;
+    font-size: 12px;
+    font-weight: 400;
+}
