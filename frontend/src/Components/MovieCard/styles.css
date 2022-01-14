@@ -32,11 +32,18 @@
 }
 
 .project-card-buttom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
     width: 180px;
     height: 40px;
-    background-color: var(--color-primary);
     border-radius: 4px;
+    
+    background-color: var(--color-primary);
     border: none;
+
     color: #FFF;
     font-size: 14px;
     font-weight: 700;

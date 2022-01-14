@@ -1,5 +1,6 @@
 import './styles.css';
 import MovieScore from 'Components/MovieScore';
+import { Link } from 'react-router-dom';
 
 const movie = {
     id: 1,
@@ -18,7 +19,9 @@ function MovieCard() {
                 <div className='card'>
                     <MovieScore />
                 </div>
-                <div className='btn btn-primary project-card-buttom'>Avaliar</div>
+                <Link to={`/form/${movie.id}`}> 
+                    <div className='btn btn-primary mt-3 project-card-buttom'>Avaliar</div>
+                </Link>
             </div>
         </div>
     );
