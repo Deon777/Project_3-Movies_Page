@@ -1,0 +1,11 @@
+
+.project-stars-container {
+    display: flex;
+    width: 132px;
+    justify-content: space-between;
+}
+
+.project-stars-container svg {
+    width: 22px;
+    height: 22px;
+}
