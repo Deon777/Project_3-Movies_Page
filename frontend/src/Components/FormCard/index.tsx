@@ -1,19 +1,29 @@
 import './styles.css'
 import { Link } from 'react-router-dom';
+import { Movie } from 'Types/movie';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { BASE_URL } from 'Utils/requests';
 
-const movie = {
-    id: 1,
-    title: 'Titulo',
-    image: 'fakeurl',
-    score: 5
+type Props = {
+    movieId: string;
 }
 
-function Form() {
+function Form( { movieId } : Props ) {
+
+    const [movie, setMovie] = useState<Movie>();
+
+    useEffect(() => {
+        axios.get(`${BASE_URL}/movies/${movieId}`).then(response => {
+            setMovie(response.data as Movie);
+        })
+    }, [movieId]);
+
     return (
         <div className="project-form-container">
-            <img src={movie.image} alt={movie.title} className='project-form-img' />
+            <img src={movie?.image} alt={movie?.title} className='project-form-img' />
             <div className="project-formbottom">
-                <h1>{movie.title}</h1>
+                <h1>{movie?.title}</h1>
                 <form className="project-formbottom-form">
                     <div className="project-formbottom-formgroup">
                         <label htmlFor="email">Informe seu email</label>
