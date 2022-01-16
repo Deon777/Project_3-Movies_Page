@@ -12,7 +12,7 @@ function Listing() {
     const [movies, setMovies] = useState<Movie[]>([]);
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/movies?size=12&sort=title&${currentPage}`).then(response => {
+        axios.get(`${BASE_URL}/movies?size=12&sort=title&page=${currentPage}`).then(response => {
             let responseMovies = response.data as MoviePage;
             setMovies(responseMovies.content);
         });
@@ -23,27 +23,13 @@ function Listing() {
             <Pagination />
             <div className='project-listing-container'>
                 <div className='row'>
-                    <div className='col-sm-6 col-lg-4 col-xl-3 mb-4'>
-                        <MovieCard />
-                    </div>
-                    <div className='col-sm-6 col-lg-4 col-xl-3 mb-4'>
-                        <MovieCard />
-                    </div>
-                    <div className='col-sm-6 col-lg-4 col-xl-3 mb-4'>
-                        <MovieCard />
-                    </div>
-                    <div className='col-sm-6 col-lg-4 col-xl-3 mb-4'>
-                        <MovieCard />
-                    </div>
-                    <div className='col-sm-6 col-lg-4 col-xl-3 mb-4'>
-                        <MovieCard />
-                    </div>
-                    <div className='col-sm-6 col-lg-4 col-xl-3 mb-4'>
-                        <MovieCard />
-                    </div>
-                    <div className='col-sm-6 col-lg-4 col-xl-3 mb-4'>
-                        <MovieCard />
-                    </div>
+                    {movies.map(movie => {
+                        return (
+                            <div key={movie.id} className='col-sm-6 col-lg-4 col-xl-3 mb-4'>
+                                <MovieCard movie={movie}/>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </div>
