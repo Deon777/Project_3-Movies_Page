@@ -8,7 +8,7 @@ import './styles.css';
 
 function Listing() {
 
-    const [currentPage, setCurrentPage] = useState(0);
+    const [currentPage, setCurrentPage] = useState(2);
     const [movies, setMovies] = useState<Movie[]>([]);
 
     useEffect(() => {

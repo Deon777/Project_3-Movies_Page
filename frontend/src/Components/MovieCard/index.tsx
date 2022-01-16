@@ -14,7 +14,7 @@ function MovieCard( { movie } : Props ) {
                 <img src={movie.image} alt={movie.title} className='project-card-image' />
                 <p className='project-card-title'>{movie.title}</p>
                 <div className='card'>
-                    <MovieScore />
+                    <MovieScore movie={movie}/>
                 </div>
                 <Link to={`/form/${movie.id}`}> 
                     <div className='btn btn-primary mt-3 project-card-buttom'>Avaliar</div>
