@@ -5,9 +5,11 @@ import { Movie } from 'Types/movie';
 
 type Props = {
     movie: Movie;
+    pageNumber: number;
 }
 
-function MovieCard( { movie } : Props ) {
+function MovieCard( { movie, pageNumber } : Props ) {
+
     return (
         <div className='project-card-container'>
             <div className='project-card-box'>
@@ -16,7 +18,7 @@ function MovieCard( { movie } : Props ) {
                 <div className='card'>
                     <MovieScore movie={movie}/>
                 </div>
-                <Link to={`/form/${movie.id}`}> 
+                <Link to={`/form/${movie.id}/${pageNumber}`}> 
                     <div className='btn btn-primary mt-3 project-card-buttom'>Avaliar</div>
                 </Link>
             </div>

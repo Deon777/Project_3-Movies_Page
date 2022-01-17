@@ -9,8 +9,9 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Listing />} />
+        <Route path="/returnPage::page" element={<Listing />} />
         <Route path="/form">
-          <Route path=":movieId" element={<Form />} />
+          <Route path=":movieId/:previousPage" element={<Form />} />
         </Route>
       </Routes>
     </BrowserRouter>
