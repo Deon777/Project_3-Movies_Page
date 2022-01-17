@@ -8,11 +8,10 @@ import { validateEmail } from 'Utils/validate';
 
 type Props = {
     movieId: string;
-    previousPage: string;
 }
 
 
-function Form( { movieId, previousPage } : Props ) {
+function Form( { movieId } : Props ) {
 
     const navigate = useNavigate();
 
@@ -45,7 +44,7 @@ function Form( { movieId, previousPage } : Props ) {
         }
 
         axios(config).then(response => {
-            navigate(`/returnPage:${previousPage}`);
+            navigate("/");
         });
     }
 
@@ -70,12 +69,12 @@ function Form( { movieId, previousPage } : Props ) {
                         </select>
                     </div>
                     <div className="project-formbottom-button-container">
-                        <button type='submit' className="project-formbottom-button" id="save">Salvar</button>
+                        <button className="project-formbottom-button" id="save">Salvar</button>
                     </div>
                 </form>
                 <div className="project-formbottom-button-container">
-                    <Link to={`/returnPage:${previousPage}`}>
-                        <button className="project-formbottom-button" id="cancel">Cancelar</button>
+                    <Link to="/">
+                        <button type='submit' className="project-formbottom-button" id="cancel">Cancelar</button>
                     </Link>
                 </div>
             </div>
